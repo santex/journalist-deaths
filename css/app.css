@@ -1,0 +1,777 @@
+html{
+		background-color: #CCCCCC;
+margin:20px;
+}
+
+body {
+	font-family: SourceSansPro-Regular, Arial, sans-serif;
+	font-size:11pt;
+	color:#231F20;
+	background-color: #CCCCCC;
+}	
+
+#xGraphic{
+	width:80%;
+	min-width:600px;
+	height:550px;
+	display:inline-block;
+}
+
+.backLine{
+	stroke:#B4C7BC;
+	fill:none;
+	stroke-width:1px;
+}
+
+.backRect{
+	fill:#EDEFED;
+	display:none;
+}
+.backRect.visible{
+	display:block;
+}
+.countrytext{
+		font-family: SourceSansPro-Bold, Arial, sans-serif;
+
+}
+.circle {
+  opacity: 1;
+}
+.circle.turnedOff{
+	opacity:0.2;
+}
+.circle:hover{
+	fill:black !important;
+}
+.circle.time{
+		stroke:#CCCCCC;
+	stroke-width:1px;
+}
+.circle.selected{
+	opacity:1;
+	stroke:black;
+	stroke-width:1px;
+}
+.circle.time.selected{
+	opacity:1;
+	stroke:#CCCCCC;
+	stroke-width:1px;
+}
+.states{
+	fill:white;
+	stroke:#CCCCCC;
+	stroke-width:1px;
+}
+
+.background{
+	display:none;
+}
+
+.countryLabel{
+	  fill: #777;
+  fill-opacity: .5;
+  font-size: 11pt;
+   text-anchor: middle;
+}
+#mapLabels{
+	display:none;
+}
+
+#mainNav{
+		margin-bottom: 15px;
+		margin-top: 30px;
+}
+#locationNav{
+			margin-bottom: 25px;
+			display:none;
+
+}
+.locationButton, .zoomInstruct{
+		display:inline-block;
+	width:120px;
+	height:16px;
+	line-height: 16px;
+	margin-right: 5px;
+	cursor: pointer;
+	text-align: left;
+	font-size: 11pt;
+	font-family: SourceSansPro-Regular, arial, sans-serif;
+	color: white;
+}
+#instruct{
+	width:70px;
+}
+#mideast{
+	width:100px;
+}
+#africa{
+	width:70px;
+}
+#centralamerica{
+	width:130px;
+}
+#southamerica{
+	width:120px;
+}
+#world{
+	width:80px;
+}
+.locationButton.selected{
+	color:black;
+	font-family: SourceSansPro-Bold, arial, sans-serif;
+	
+}
+.locationButton:hover{
+	color:#E11F26;
+	font-family: SourceSansPro-Bold, arial, sans-serif;
+
+}
+.button{
+	display:inline-block;
+	width:224px;
+	height:25px;
+	line-height: 25px;
+	margin-right: 20px;
+	color:black;
+	cursor: pointer;
+	text-align: center;
+	font-size: 13pt;
+	font-family: SourceSansPro-Regular, arial, sans-serif;
+	background-color: white;
+}
+.instruction{
+	display:inline-block;
+	width:80px;
+	height:25px;
+	line-height: 25px;
+	margin-right: 20px;
+	font-size: 13pt;
+	font-family: SourceSansPro-Regular, arial, sans-serif;
+}
+
+.button.selected{
+	background-color: black;
+	color:white;
+
+}
+.button:hover{
+	background-color: #E11F26;
+	color:white;
+}
+
+select{
+	visibility: hidden;
+
+}
+
+.chosen-select{
+	width:200px;
+}
+
+.chosen-container{
+	width:200px;
+ 
+}
+section#xGraphicsCharts #sortLists{
+	width:200px;
+	position:absolute;
+	right:20px;
+}
+section#xGraphicsCharts #sortInstruct{
+	font-size: 14pt;
+	margin-bottom: 20px;
+}
+section#xGraphicsCharts #theDropdown{
+width:200px;
+height:550px;
+position:absolute;
+right:-200px;
+top:225px;
+}
+
+.dropInstruct{
+	text-align: left;
+	font-size: 16pt;
+	font-family: SourceSansPro-Light, arial, sans-serif;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+section#xGraphicsCharts #source{
+		font-size: 11pt;
+		line-height: 1.2;
+	font-family:SourceSansPro-Light, Arial, sans-serif;
+}
+
+
+
+/*header and other setup*/
+section#xGraphicsCharts{
+	width:100%;
+	margin: 0 auto 0 auto;
+	position:relative;
+	
+}
+
+section#xGraphicsCharts #mainGraphic{
+	position:relative;
+  padding-bottom: 40px;
+  width:960px;
+  margin: 50px auto 150px auto;
+}
+
+
+
+#fallback{
+	margin:100px auto 100px auto;
+	font-size: 20px;
+	text-align: center;
+	
+}
+
+section#xGraphicsCharts header{
+  position: fixed;
+  text-align: center;
+  top:0;
+  left:-2px;
+  width: 100%;
+  padding: 10px 0 20px 0;
+  background: #FFF;
+  -webkit-box-shadow: 0 0px 10px -2px #cccccc;
+  -moz-box-shadow: 0 0px 10px -2px #cccccc;
+  box-shadow: 0 0px 10px -2px #cccccc;
+  z-index: 10000000;
+	
+}
+
+section#xGraphicsCharts #logo{
+	background-image: url('thelogo.png');
+	height:20px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width:100%;
+	margin-top:10px;
+}
+
+
+
+
+/*Footer et cet.*/
+
+footer a{
+	text-decoration: none;
+	color:black;
+	font-family: SourceSansPro-Bold;
+}
+
+
+footer {
+  float: left;
+  background-color: #F3F3F3;
+  border-top: 1px solid #EAEAEA;
+  color: #aaa;
+  width: 100%;
+}
+footer .wrapper {
+  padding: 1.8em 0;
+}
+footer a:link,
+footer a:visited {
+  color: #949494;
+}
+footer a:hover,
+footer a:active,
+footer a:focus {
+  color: #444444;
+}
+footer ul {
+  margin-bottom: 1.9em;
+  color: #ddd;
+  font-size: .75em;
+  text-align: center;
+}
+footer li {
+  display: inline;
+  border-right: 1px solid #CCC;
+  margin-right: .3em;
+  padding-right: 0.6em;
+}
+footer li.last-child {
+  border: none;
+}
+footer p {
+  font-size: .7em;
+  line-height: 1.6em;
+}
+
+
+
+/*clickable navigation*/
+section#xGraphicsCharts .nav, section#xGraphicsCharts .play, section#xGraphicsCharts .reset, section#xGraphicsCharts .scalebox  {
+	font-family: SourceSansPro-Bold, Arial, sans-serif;
+	font-size: 12pt;
+	cursor:pointer;
+	}
+
+section#xGraphicsCharts .legend{
+	cursor:pointer;	
+}
+
+section#xGraphicsCharts .nav:hover{
+	fill:#ff9c00;
+	
+}
+
+section#xGraphicsCharts .nav.selected{
+	fill:#231F20;
+	
+}
+
+/*BUNCHA BOLD STUFF*/
+section#xGraphicsCharts .label, section#xGraphicsCharts .instructions, section#xGraphicsCharts .captiontop  {
+	font-family: SourceSansPro-Bold, Arial, sans-serif;
+	}
+
+/*other chart text is black*/	
+#source{
+	margin-top: 15px;
+	}	
+
+section#xGraphicsCharts .legend.clicked{
+	opacity:0.2;
+	
+}
+/*size the hed and dek and tooltips*/	
+section#xGraphicsCharts .hed {
+	font-size: 48pt;
+	margin-bottom:13px;
+	margin-top:10px;
+	text-align: left; 
+	font-family: SourceSansPro-Light, arial, sans-serif;
+	}
+section#xGraphicsCharts .dek {
+	font-size: 14pt;
+	text-align: left;
+	line-height: 1.2;
+	margin-bottom: 10px;
+	font-family: SourceSansPro-Light, arial, sans-serif;
+
+	}	
+
+/*tooltips get centered*/
+.tip1, .tip2, .tip3, .tip4 {
+	text-align: center;
+	font-size: 10pt; 
+	line-height: 1.2;
+}
+.tip1 {
+	font-family: SourceSansPro-Bold, Arial, sans-serif;
+	font-size: 14pt;
+	line-height: 1;
+	margin-bottom:3px;
+	}
+
+
+.tip2 {
+	font-family: SourceSansPro-LightIt, Arial, sans-serif;
+
+	}
+.tip4{
+	margin-top: 8px;
+}	
+	
+section#xGraphicsCharts .caption {
+	font-size: 18pt;
+	width:200px;
+	}	
+section#xGraphicsCharts .captiontop {
+	font-size: 14pt;
+	margin-bottom:6px; 
+	}
+
+/*chart stuff*/
+/*axis*/
+section#xGraphicsCharts .axis line, section#xGraphicsCharts .axiszero line  {
+	fill: none;
+	stroke: white;
+	}
+section#xGraphicsCharts .axiszero line {  
+	stroke: #231F20;
+	stroke-width: 1.5px;
+	}
+section#xGraphicsCharts .axis text {
+	font-family:  SourceSansPro-Semibold, Arial, sans-serif;
+	font-size: 10pt;
+	fill:white;
+	}
+section#xGraphicsCharts .axiszero text, section#xGraphicsCharts .axis path, section#xGraphicsCharts .axiszero path {
+  display: none;
+}
+
+/*lines and area and plot space*/
+section#xGraphicsCharts .line {
+  fill: none;
+  stroke: #231F20;
+  stroke-linejoin: round;
+  stroke-linecap:round;
+} 
+section#xGraphicsCharts .lineChart {
+  stroke-width:2.5px;
+} 
+
+section#xGraphicsCharts .lineChart:hover {
+  stroke-width:6px;
+} 
+
+section#xGraphicsCharts .lineChart.notSelected {
+  opacity:0.4;
+} 
+
+section#xGraphicsCharts .bar:hover{fill:orange !important;}
+/*
+section#xGraphicsCharts .bar.notSelected {
+  opacity:0.4;
+} 
+*/
+section#xGraphicsCharts .area, section#xGraphicsCharts .area2 {
+	opacity:0.8;
+}
+
+section#xGraphicsCharts .plot{
+fill: #CCCCCC;
+}
+
+section#xGraphicsCharts .cursorline {
+  stroke: #AFBABF;
+  stroke-width: 2px;
+}
+section#xGraphicsCharts .recessionBox {
+  fill: #D4D8DA;
+}
+section#xGraphicsCharts #scaleHeader{
+	display:inline-block;
+	margin:-10px 0 10px 0;
+	color:#AFBABF;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+section#xGraphicsCharts #scaleDate{
+	display:inline-block;
+	text-align: right;
+	margin:-10px 0 10px 0;
+	color:#AFBABF;
+	text-transform: uppercase;
+
+}
+
+
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  font-style: normal;
+  font-weight: 300;
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-Semibold';
+  font-style: normal;
+  font-weight: 600;
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  font-style: normal;
+  font-weight: 700;
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-LightIt';
+  font-style: italic;
+  font-weight: 300;
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  font-style: normal;
+  font-weight: 400;
+  
+}
+
+.tipsy { position: absolute; padding: 5px; z-index: 100000; }
+  .tipsy-inner { background-color: #000; color: #FFF; max-width: 200px; margin:20px 0px 20px 0px; padding:10px;}
+
+  .tipsy-inner { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+
+  .tipsy-arrow { position: absolute; width: 0; height: 0; line-height: 0; margin:20px 0px 20px 0px; border: 5px dashed #000; }
+  
+  /* Rules to colour arrows */
+  .tipsy-arrow-n { border-bottom-color: #000; }
+  .tipsy-arrow-s { border-top-color: #000; }
+  .tipsy-arrow-e { border-left-color: #000; }
+  .tipsy-arrow-w { border-right-color: #000; }
+  
+	.tipsy-n .tipsy-arrow { top: 0px; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-nw .tipsy-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
+    .tipsy-ne .tipsy-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
+  .tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
+  .tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
+  .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+
+
+.gravity { width: 100%; margin: 5px 0; border-spacing: 5px; }
+  .gravity td { text-align: center; vertical-align: middle; padding: 5px 0; background-color: #d0d0d0; width: 33%; }
+  .gravity a { }
+    .gravity a:hover { color: #505050; background: none; }
+    
+    
+    /* SLIDER STUFFmakes the button and the background */
+section#xGraphicsCharts .ui-slider {
+	position: relative;
+	text-align: left;
+}
+section#xGraphicsCharts .ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1em;
+	height: 1em;
+	cursor: default;
+}
+
+
+
+section#xGraphicsCharts .ui-slider-horizontal {
+	height: .8em;
+}
+section#xGraphicsCharts .ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+section#xGraphicsCharts .ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+section#xGraphicsCharts .ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+section#xGraphicsCharts .ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+/*makes the grey background*/
+section#xGraphicsCharts .ui-widget-content {
+	background: #eeeeee;
+}
+/*makes the red part*/
+section#xGraphicsCharts .ui-widget-header {
+	background: #e11f26;
+}
+
+
+/* makes the button
+----------------------------------*/
+section#xGraphicsCharts .ui-state-default,
+section#xGraphicsCharts .ui-widget-content .ui-state-default,
+section#xGraphicsCharts .ui-widget-header .ui-state-default {
+	outline: none;
+	border: 1px solid #cccccc;
+	background: #f6f6f6;
+	font-weight: bold;
+}
+
+section#xGraphicsCharts .ui-corner-all {
+	border-radius: 8px;
+}
+
+section#xGraphicsCharts .ui-state-hover,
+section#xGraphicsCharts .ui-widget-content .ui-state-hover,
+section#xGraphicsCharts .ui-widget-header .ui-state-hover {
+	border: 1px solid #CCCCCC;
+	background: #faf7bb;
+	font-weight: bold;
+	
+}
+
+/* SHARE BUTTON STUFF */
+
+div.article-share {
+  position:fixed;
+  width: 100px;
+  left:0px;
+  top:22px;
+}
+div.share-toolbar {
+  width: auto;
+}
+div.article-share div.share-toolbar div.share-icon {
+  float: right;
+  margin: 0 0 0 10px;
+}
+div.article-share div.share-toolbar div.share-buttons-container {
+  left: -50px;
+  top: 26px;
+}
+#share-toolbar,
+.share-buttons-wrapper {
+  position: absolute;
+  padding-top: 15px;
+  background: white;
+  border: 1px solid #e1e1e1;
+  height: 35px;
+  width: 415px;
+  z-index: 2;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+}
+#share-toolbar .fb,
+.share-buttons-wrapper .fb {
+  display: inline-block;
+  width: 125px;
+  height: 20px;
+  margin-left: 10px;
+  border: none;
+}
+#share-toolbar .twitter,
+.share-buttons-wrapper .twitter {
+  margin-left: 15px;
+  width: 80px;
+  height: 20px;
+}
+#share-toolbar .IN-widget,
+.share-buttons-wrapper .IN-widget {
+  margin-left: 15px;
+}
+#share-toolbar .plusone,
+.share-buttons-wrapper .plusone {
+  display: inline-block;
+  height: 20px;
+  width: 32px;
+  margin-left: 15px;
+}
+
+.share-toolbar {
+  z-index: 2;
+  width: 20px;
+  position: absolute;
+}
+.share-toolbar .share-more:hover {
+  background-position: 0px -60px;
+}
+.share-toolbar .share-buttons-container {
+  width: 0px;
+  height: 55px;
+  left: -5px;
+  top: 39px;
+  -webkit-transition: left, opacity, 250ms ease-out;
+  -moz-transition: left, opacity, 250ms ease-out;
+  -o-transition: left, opacity, 250ms ease-out;
+  transition: left, opacity, 250ms ease-out;
+  overflow: hidden;
+  position: absolute;
+  z-index: 99;
+  opacity: 0;
+}
+.share-toolbar .open.share-buttons-container {
+  display: block;
+  width: 230px;
+  opacity: 1;
+  left: 0px;
+  z-index: 900;
+}
+.share-toolbar .share-buttons-wrapper {
+  width: 183px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+.share-toolbar .share-icon {
+  position: relative;
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  padding-top: 0;
+  background: transparent url(../css/share_sprite-gray-20x20.png) no-repeat;
+  cursor: pointer;
+}
+.share-toolbar .share-icon .share-iframe {
+  display: block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  border: 0;
+  background: #FFFFFF;
+  position: absolute;
+  top: -6px;
+  left: -5px;
+  overflow: hidden;
+}
+.share-toolbar .share-icon.open {
+  z-index: 999;
+}
+.share-toolbar .share-icon.open .share-iframe {
+  opacity: 1;
+  width: auto;
+  height: 20px;
+  border: 1px solid #dadada;
+  padding: 6px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  box-shadow: 0 2px 0 #eaeaea;
+  -webkit-box-shadow: 0 2px 0 #eaeaea;
+  -moz-box-shadow: 0 2px 0 #eaeaea;
+}
+.share-toolbar .share-icon:first-child {
+  margin: 0px;
+}
+.share-toolbar .share-more {
+  background-position: 0px -40px;
+  cursor: pointer;
+  height: 17px;
+}
+.share-toolbar .fb-icon {
+  background-position: 0px 0px;
+}
+.share-toolbar .fb-icon .share-iframe {
+  width: 125px;
+}
+.share-toolbar .fb-icon .share-iframe .fb {
+  display: inline-block;
+  width: 125px;
+  height: 20px;
+  border: none;
+}
+.share-toolbar .twitter-icon {
+  background-position: 0px -20px;
+}
+.share-toolbar .twitter-icon .share-iframe .twitter {
+  width: 80px;
+}
+div.share-toolbar div.share-icon:hover div.share-iframe {
+  display: block;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  border: 1px solid #E1E1E1;
+  border-bottom: 4px solid #E1E1E1;
+  padding: 6px 5px;
+}
+
+
+#Iran{
+	dy:40;
+}
+
+
+
+    
